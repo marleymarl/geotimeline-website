@@ -1,24 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Result, Button } from 'antd';
 import './App.css';
+import 'antd/dist/antd.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Result
+    status="success"
+    title="GeoTimeline - Map Data Input and View of Historical Footprints for Confirmed Cases of Coronavirus"
+    subTitle="If you are a confirmed case, enter in your footprints anonymously by clicking on the map and setting a date and time for each. If you are not a confirmed case, view whether you've come into contact before and how to avoid future contact in order to mitigate risk and reduce spread."
+    extra={[
+      <Button type="primary" key="console">
+        Start A Timeline
+      </Button>,
+      <Button key="buy">View Data</Button>,
+    ]}
+  />
     </div>
   );
 }
