@@ -1,10 +1,10 @@
 import React from 'react';
 import { Layout } from 'antd';
 //
-import { SiteHeader } from './components/structure';
+import { SiteHeader, SiteFooter } from './components/structure';
 import HomePage from './HomePage';
 //
-import 'antd/dist/antd.less';
+// import 'antd/dist/antd.less';
 import './App.less';
 //
 const { Content, Footer } = Layout;
@@ -16,7 +16,7 @@ function App() {
       <Content>
         <HomePage />
       </Content>
-      <Footer></Footer>
+      <SiteFooter />
     </Layout>
   );
 }
