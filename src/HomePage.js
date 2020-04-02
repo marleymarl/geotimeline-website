@@ -7,8 +7,7 @@ import {
   Steps,
   Avatar,
   Card,
-  List,
-  Empty,
+  Space,
   Carousel,
   Row,
   Col,
@@ -100,7 +99,7 @@ export default class HomePage extends Component {
           </Col>
         </Row>
         <Row justify='center'>
-          <Col span={18}>
+          <Col span={9}>
             <Title level={2} style={{ textAlign: 'center' }}>
               Who Is Making This
             </Title>
@@ -108,6 +107,10 @@ export default class HomePage extends Component {
               An international team of volunteers is building this and all of
               the code is open sourced on Github.
             </Paragraph>
+
+            <Space size='small'></Space>
+          </Col>
+          <Col span={9}>
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
@@ -155,18 +158,20 @@ export default class HomePage extends Component {
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
-            <List
-              itemLayout='horizontal'
-              dataSource={data}
-              renderItem={item => (
-                <List.Item>
-                  <List.Item.Meta
-                    title={item.title}
-                    description={item.description}
-                  />
-                </List.Item>
-              )}
-            />
+          </Col>
+        </Row>
+        <Row justify='center'>
+          <Col span={8}>
+            {console.log(data.map(item => item.title))}
+            <Carousel autoplay>
+              {data &&
+                data.map((item, i) => (
+                  <Card key={`newsItem_${i}`} style={{ textAlign: 'center' }}>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </Card>
+                ))}
+            </Carousel>
           </Col>
         </Row>
       </div>
