@@ -12,10 +12,11 @@ import {
   Row,
   Col,
 } from 'antd';
-import { EnvironmentOutlined } from '@ant-design/icons';
+import { EnvironmentOutlined, DownCircleTwoTone } from '@ant-design/icons';
 //
-// import 'antd/dist/antd.less';
-import './App.less';
+import { Faq } from './components/elements';
+//
+import './HomePage.less';
 //
 const { Title, Paragraph } = Typography;
 const { Step } = Steps;
@@ -60,24 +61,39 @@ export default class HomePage extends Component {
 
     return (
       <div>
-        <Row justify='center'>
+        <Row
+          justify='center'
+          align='middle'
+          id='start'
+          className='hero-section'
+        >
           <Col span={18}>
             <Result
               icon={<EnvironmentOutlined />}
               title='GeoTimeline - Map Data Input and View of Historical Footprints for Confirmed Cases of Coronavirus'
               subTitle="If you are a confirmed case, enter in your footprints anonymously by clicking on the map and setting a date and time for each. If you are not a confirmed case, view whether you've come into contact before and how to avoid future contact in order to mitigate risk and reduce spread."
               extra={[
-                <Button type='primary' key='console'>
+                <Button type='primary' size='large' key='console'>
                   Start A Timeline
                 </Button>,
-                <Button key='buy'>View Data</Button>,
+                <Button key='buy' size='large'>
+                  View Data
+                </Button>,
               ]}
             />
+            <div className='scrollTo'>
+              <DownCircleTwoTone />
+            </div>
             <Divider />
           </Col>
         </Row>
-        <Row justify='center'>
-          <Col span={18}>
+        <Row
+          justify='center'
+          gutter={[24, 0]}
+          style={{ padding: '80px 0', backgroundColor: '@primary-color' }}
+          id='how'
+        >
+          <Col span={16}>
             <Title level={2} style={{ textAlign: 'center' }}>
               How It Works
             </Title>
@@ -95,10 +111,14 @@ export default class HomePage extends Component {
                 description='Useful Apps Can Be Built With This Data.'
               />
             </Steps>
-            <Divider />
           </Col>
         </Row>
-        <Row justify='center'>
+        <Row
+          justify='center'
+          gutter={[24, 0]}
+          style={{ padding: '80px 0' }}
+          id='who'
+        >
           <Col span={9}>
             <Title level={2} style={{ textAlign: 'center' }}>
               Who Is Making This
@@ -107,8 +127,6 @@ export default class HomePage extends Component {
               An international team of volunteers is building this and all of
               the code is open sourced on Github.
             </Paragraph>
-
-            <Space size='small'></Space>
           </Col>
           <Col span={9}>
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
@@ -160,18 +178,35 @@ export default class HomePage extends Component {
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
           </Col>
         </Row>
-        <Row justify='center'>
-          <Col span={8}>
+        <Row justify='center' style={{ padding: '80px 0' }}>
+          <Col span={12}>
             {console.log(data.map(item => item.title))}
-            <Carousel autoplay>
+            <Carousel dots dotPosition='top'>
               {data &&
                 data.map((item, i) => (
-                  <Card key={`newsItem_${i}`} style={{ textAlign: 'center' }}>
+                  <Card
+                    key={`newsItem_${i}`}
+                    className='card'
+                    bodyStyle={{
+                      textAlign: 'center',
+                      minHeight: '10vmin',
+                    }}
+                  >
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
                   </Card>
                 ))}
             </Carousel>
+          </Col>
+        </Row>
+        <Row
+          justify='center'
+          gutter={[24, 0]}
+          style={{ padding: '80px 0' }}
+          id='faq'
+        >
+          <Col span={12}>
+            <Faq />
           </Col>
         </Row>
       </div>
