@@ -14,37 +14,13 @@ import {
 } from 'antd';
 import { EnvironmentOutlined, DownCircleTwoTone } from '@ant-design/icons';
 //
-import { Faq } from './components/elements';
+import { Faq, NewsCarousel } from './components/elements';
 //
 import './HomePage.less';
 //
 const { Title, Paragraph } = Typography;
 const { Step } = Steps;
 const { Meta } = Card;
-
-const data = [
-  {
-    title: 'GeoTimeline Wins Hackathon March 22, 2020',
-    description: 'description to be entered here ',
-  },
-  {
-    title: 'GeoTimeline Featured On HelpWithCovid March 24, 2020',
-    description: 'description to be entered here ',
-  },
-  {
-    title: 'GeoTimeline Team Grows from 3 to 45 in One Week',
-    description: 'description to be entered here ',
-  },
-  {
-    title:
-      'GeoTimeline Releases Anonymized Public Input and View App April 2, 2020',
-    description: 'description to be entered here ',
-  },
-  {
-    title: 'GeoTimeline Will Release Smart Proximity Alerts App April 9, 2020',
-    description: 'description to be entered here ',
-  },
-];
 
 export default class HomePage extends Component {
   state = {
@@ -116,10 +92,11 @@ export default class HomePage extends Component {
         <Row
           justify='center'
           gutter={[24, 0]}
-          style={{ padding: '80px 0' }}
+          style={{ padding: '80px 0', flexWrap: 'wrap' }}
           id='who'
+          // className='dark'
         >
-          <Col span={9}>
+          <Col span={18}>
             <Title level={2} style={{ textAlign: 'center' }}>
               Who Is Making This
             </Title>
@@ -128,7 +105,7 @@ export default class HomePage extends Component {
               the code is open sourced on Github.
             </Paragraph>
           </Col>
-          <Col span={9}>
+          <Col span={18}>
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
@@ -178,25 +155,9 @@ export default class HomePage extends Component {
             <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
           </Col>
         </Row>
-        <Row justify='center' style={{ padding: '80px 0' }}>
+        <Row justify='center' style={{ padding: '80px 0' }} className='dark'>
           <Col span={12}>
-            {console.log(data.map(item => item.title))}
-            <Carousel dots dotPosition='top'>
-              {data &&
-                data.map((item, i) => (
-                  <Card
-                    key={`newsItem_${i}`}
-                    className='card'
-                    bodyStyle={{
-                      textAlign: 'center',
-                      minHeight: '10vmin',
-                    }}
-                  >
-                    <h3>{item.title}</h3>
-                    <p>{item.description}</p>
-                  </Card>
-                ))}
-            </Carousel>
+            <NewsCarousel />
           </Col>
         </Row>
         <Row
