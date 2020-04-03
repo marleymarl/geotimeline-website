@@ -1,3 +1,4 @@
 import Faq from './Faq';
+import NewsCarousel from './NewsCarousel';
 
-export { Faq };
+export { Faq, NewsCarousel };
