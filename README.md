@@ -1,3 +1,17 @@
+# GeoTimeline Website repo
+
+Welcome to the GeoTimeline website repo.
+
+```
+/**
+* TODO: Description & project info
+*/
+```
+
+[Ant Design Docs - custom theme with Less ](https://ant.design/docs/react/use-with-create-react-app)
+
+## create-react-app default README
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

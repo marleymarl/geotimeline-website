@@ -1,18 +1,23 @@
 import React from 'react';
-import { Result, Button, Typography, Divider } from 'antd';
-import './App.css';
-import 'antd/dist/antd.css';
+import { Layout } from 'antd';
+//
+import { SiteHeader, SiteFooter } from './components/structure';
 import HomePage from './HomePage';
-
-const { Title } = Typography;
+//
+// import 'antd/dist/antd.less';
+import './App.less';
+//
+const { Content, Footer } = Layout;
 
 function App() {
   return (
-    <div>
-      <HomePage />
-
-    </div>
-  
+    <Layout>
+      <SiteHeader navLayout='horizontal' />
+      <Content>
+        <HomePage />
+      </Content>
+      <SiteFooter />
+    </Layout>
   );
 }
 
