@@ -6,8 +6,8 @@ import './NewsCarousel.less';
 const { Title, Paragraph } = Typography;
 const data = [
   {
-    title: '🎉🎉 GeoTimeline Wins Hackathon March 22, 2020 🎉🎉',
-    description: 'description to be entered here ',
+    title: '🎉🎉 GeoTimeline Wins Supply Chain / Medical Logistics Prize at EndCoronavirus Hackathon 🎉🎉',
+    description: 'March 22, 2020   ',
   },
   {
     title: 'GeoTimeline Featured On HelpWithCovid March 24, 2020',

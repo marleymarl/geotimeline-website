@@ -15,8 +15,7 @@ const SiteFooter = props => {
       <Row justify='center' gutter={16}>
         <Col flex={3}>
           <Menu mode={navLayout}>
-            <Menu.Item key='how'>How it works</Menu.Item>
-            <Menu.Item key='who'>Who are we</Menu.Item>
+            
           </Menu>
         </Col>
         <Col flex={3}>
@@ -27,7 +26,7 @@ const SiteFooter = props => {
             }}
             description={<span>All Of Our Code Is Open Source</span>}
           >
-            <Button type='primary'>View It On Github</Button>
+            <Button type='primary' href="https://github.com/marleymarl/geotime">View It On Github</Button>
           </Empty>
         </Col>
         <Col flex={3}>

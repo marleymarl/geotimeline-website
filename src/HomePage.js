@@ -46,13 +46,22 @@ export default class HomePage extends Component {
           <Col span={18}>
             <Result
               icon={<EnvironmentOutlined />}
-              title='GeoTimeline - Map Data Input and View of Historical Footprints for Confirmed Cases of Coronavirus'
-              subTitle="If you are a confirmed case, enter in your footprints anonymously by clicking on the map and setting a date and time for each. If you are not a confirmed case, view whether you've come into contact before and how to avoid future contact in order to mitigate risk and reduce spread."
+              title='GeoTimeline - Map Data Input of Historical Footprints for Confirmed Cases of Coronavirus'
+              subTitle='If you are a confirmed case, enter in your footprints anonymously by clicking on the map and setting a date and time for each. Or click to view the current global footprint dataset.'
               extra={[
-                <Button type='primary' size='large' key='console'>
+                <Button
+                  type='primary'
+                  size='large'
+                  key='console'
+                  href='https://app.geotimeline.com'
+                >
                   Start A Timeline
                 </Button>,
-                <Button key='buy' size='large'>
+                <Button
+                  key='buy'
+                  size='large'
+                  href='https://app.geotimeline.com/dataview'
+                >
                   View Data
                 </Button>,
               ]}
