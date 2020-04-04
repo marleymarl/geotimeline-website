@@ -5,10 +5,7 @@ import {
   Typography,
   Divider,
   Steps,
-  Avatar,
   Card,
-  Space,
-  Carousel,
   Row,
   Col,
 } from 'antd';
