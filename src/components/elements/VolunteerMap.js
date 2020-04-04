@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 //
 import './VolunteerMap.less';
 
 const googleApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
-const mapStyles = {
-  width: '100%',
-  height: '100%',
-  position: 'absolute',
-  top: 0,
-  left: 0,
-};
-
-const defaultProps = {
+const mapProps = {
   center: { lat: 40.674, lng: -73.945 },
   zoom: 12,
+  disableDefaultUI: true,
   styles: [
     { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
     { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
@@ -98,36 +91,85 @@ const defaultProps = {
   ],
 };
 function VolunteerMap(props) {
-  const { google } = props;
-  const [volunteers, setVolunteers] = useState(null);
+  const [volunteers, setVolunteers] = useState([{}]);
+  // const [webVolunteers, setWebVolunteers] = useState(null);
 
   useEffect(() => {
-    const url = 'https://api.github.com/repos/marleymarl/geotime/contributors';
-    async function getProjectVolunteers(url) {
+    const gtContribUrl =
+      'https://api.github.com/repos/marleymarl/geotime/contributors';
+    const webContribUrl =
+      'https://api.github.com/repos/marleymarl/geotimeline-website/contributors';
+    let allVolunteers = [];
+
+    async function getData(url) {
       let response = await fetch(url);
       let data = await response.json();
       return data;
     }
-    getProjectVolunteers(url).then(data => console.log(data));
-  });
-  // console.log(volunteers);
+    async function getUserData(url, user) {
+      // console.log(url && user && `${url}/${user}`);
 
-  // createRef(Map);
+      let response = await fetch(url && user && `${url}/${user}`);
+      let data = await response.json();
+      return data;
+    }
+
+    getData(gtContribUrl)
+      .then(data => {
+        const users = data.map(user => {
+          return {
+            login: user.login,
+            id: user.id,
+            contributions: user.contributions,
+          };
+        });
+
+        return users;
+      })
+      .then(users => {
+        for (let i = 0; i < users.length; i++) {
+          getProfile(users[i].login);
+        }
+      });
+
+    getData(webContribUrl)
+      .then(data => {
+        const users = data.map(user => {
+          return {
+            login: user.login,
+            id: user.id,
+            contributions: user.contributions,
+          };
+        });
+
+        return users;
+      })
+      .then(users => {
+        for (let i = 0; i < users.length; i++) {
+          getProfile(users[i].login);
+        }
+      });
+
+    function getProfile(user) {
+      const url = 'https://api.github.com/users';
+
+      getUserData(url, user)
+        .then(data => {
+          return data;
+        })
+        .then(data => {
+          allVolunteers.push(data);
+        });
+    }
+  });
+
   return (
     <div className='volunteer-map'>
-      <Map
-        google={google}
-        zoom={14}
-        style={mapStyles}
-        initialCenter={{
-          lat: -1.2884,
-          lng: 36.8233,
-        }}
-      />
+      <LoadScript id='script-loader' googleMapsApiKey={googleApiKey}>
+        <GoogleMap id='map' options={mapProps}></GoogleMap>
+      </LoadScript>
     </div>
   );
 }
 
-export default GoogleApiWrapper({
-  apiKey: googleApiKey,
-})(VolunteerMap);
+export default VolunteerMap;
