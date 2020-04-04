@@ -1,19 +1,21 @@
 import React, { useEfect } from 'react';
-import { Collapse, Typography } from 'antd';
+import { Collapse, Typography, Anchor } from 'antd';
 //
 const { Title, Paragraph } = Typography;
 const { Panel } = Collapse;
+const { Link } = Anchor;
 
 const data = [
   {
     question: 'What does GeoTimeline.com do?',
     answer:
-      'GeoTime is a data set of crowd sourced contact tracing information that can help the general public better understand the spread of COVID19 in your area.As people voluntarily post their locations, Geotime anonymously collects information instantly and provides a live version of contact tracing around the world. ',
+      'GeoTime is a data set of crowd sourced contact tracing information that can help the general public better understand the spread of COVID19 in your area.As people voluntarily post their locations, Geotime anonymously collects information instantly and provides a live version of contact tracing around the world. '
   },
   {
     question: 'What is contact tracing ?',
-    answer:
-      'Contact tracing is the process of identifying persons who may have come into contact with an infected person("contacts") and subsequent collection of further information about these contacts.This procedure is an effective public health practice to contain infectious diseases, such as measles, influenza, and Ebola. (According to WHO)',
+    order: [{ link: ['Contact tracing', 'https://en.wikipedia.org/wiki/Contact_tracing'] },
+    { paragraph: 'is the process of identifying persons who may have come into contact with an infected person("contacts") and subsequent collection of further information about these contacts.This procedure is an effective public health practice to contain infectious diseases, such as measles, influenza, and Ebola.' },
+    { link: ['(According to WHO)', 'https://www.who.int/csr/disease/ebola/training/contact-tracing/en/'] }]
   },
   {
     question:
@@ -47,11 +49,27 @@ const Faq = props => {
       <Title level={3}>GeoTimeline.com FAQ</Title>
       <Collapse defaultActiveKey={['0']} onChange={callback}>
         {data &&
-          data.map((panel, i) => (
-            <Panel header={panel.question} key={i}>
-              <Paragraph>{panel.answer}</Paragraph>
+          data.map((panel, i) => panel.order ?
+            <Panel className="faq-panel" nowrap header={panel.question} key={i}>
+              {panel.order.map((content) => content.link ?
+
+                <a href={content.link[1]}>'{content.link[0]}'</a>
+                :
+                <p>{content.paragraph}</p>
+                  // or this:
+                  //<Anchor>
+                  //  <Link href={content.link[1]} title={content.link[0]} />
+                  //</Anchor>
+                  // :
+                  //<Paragraph>{content.paragraph}</Paragraph>
+              )}
             </Panel>
-          ))}
+            :
+            (
+              <Panel header={panel.question} key={i}>
+                <Paragraph>{panel.answer}</Paragraph>
+              </Panel>
+            ))}
       </Collapse>
     </div>
   );

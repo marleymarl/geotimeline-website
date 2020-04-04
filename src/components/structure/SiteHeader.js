@@ -10,7 +10,7 @@ const { Header } = Layout;
 const SiteHeader = props => {
   const [current, setCurrent] = useState(null);
   const { navLayout } = props;
-//With previous linehieght, ther was a little notch on bottom of nav menu items
+//With previous lineheight, ther was a little notch on bottom of nav menu items
   return (
     <Header style={{ position: 'fixed', zIndex: 2, width: '100%', lineHeight: '62px' }}>
       <Row justify='space-between'>
