@@ -1,7 +1,6 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Layout, Menu, Row, Col, Empty, Button } from 'antd';
 //
-// import 'antd/dist/antd.less';
 import './SiteFooter.less';
 //
 const { Footer } = Layout;
@@ -14,9 +13,7 @@ const SiteFooter = props => {
     <Footer>
       <Row justify='center' gutter={16}>
         <Col flex={3}>
-          <Menu mode={navLayout}>
-            
-          </Menu>
+          <Menu mode={navLayout}></Menu>
         </Col>
         <Col flex={3}>
           <Empty
@@ -26,7 +23,9 @@ const SiteFooter = props => {
             }}
             description={<span>All Of Our Code Is Open Source</span>}
           >
-            <Button type='primary' href="https://github.com/marleymarl/geotime">View It On Github</Button>
+            <Button type='primary' href='https://github.com/marleymarl/geotime'>
+              View It On Github
+            </Button>
           </Empty>
         </Col>
         <Col flex={3}>
