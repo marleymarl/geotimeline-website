@@ -1,4 +1,4 @@
-import React, { useEfect } from 'react';
+import React from 'react';
 import { Collapse, Typography } from 'antd';
 //
 const { Title, Paragraph } = Typography;
