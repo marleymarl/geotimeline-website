@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Layout, Menu, Row, Col } from 'antd';
 //
 import { EnvironmentTwoTone } from '@ant-design/icons';
