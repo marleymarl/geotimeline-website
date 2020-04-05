@@ -1,17 +1,34 @@
 @import '../../assets/styles/theme.less';
 
+@mobile-width: 406px;
+
 .ant-layout-header {
   background-color: @layout-body-background;
   height: 66px;
   margin-top: -66px;
-}
-
-.ant-menu {
+  &.header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    line-height: 62px;
+    @media screen
+    and (max-width: @mobile-width) {
+      padding: 0 16px;
+    }
+  }
 }
 
 .brand {
   span {
     color: @brand-color;
     font-size: @heading-3-size;
+  }
+
+  @media screen 
+  and (max-width: @mobile-width) {
+    span {
+      font-size: @heading-4-size;
+
+    }
   }
 }
