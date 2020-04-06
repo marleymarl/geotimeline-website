@@ -9,9 +9,11 @@ const { Header } = Layout;
 const SiteHeader = props => {
   const [current, setCurrent] = useState(null);
   const { navLayout } = props;
-
+//With previous lineheight, ther was a little notch on bottom of nav menu items
   return (
-    <Header className='header'>
+
+    <Header style={{ position: 'fixed', zIndex: 2, width: '100%', lineHeight: '62px' }}>
+
       <Row justify='space-between'>
         <Col sm={12} xs={18}>
           <div className='brand'>

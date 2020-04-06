@@ -30,7 +30,7 @@ const data = [
 
 const NewsSlider = props => {
   return (
-    <Carousel dots dotPosition='bottom'>
+    <Carousel autoplay dots dotPosition='bottom'>
       {data &&
         data.map((item, i) => (
           <Card
