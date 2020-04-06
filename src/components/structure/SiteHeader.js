@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Row, Col } from 'antd';
-//
-import { EnvironmentTwoTone } from '@ant-design/icons';
+import { EnvironmentTwoTone, MenuOutlined } from '@ant-design/icons';
 
 import './SiteHeader.less';
 
@@ -12,16 +11,20 @@ const SiteHeader = props => {
   const { navLayout } = props;
 
   return (
-    <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+    <Header className='header'>
       <Row justify='space-between'>
-        <Col span={12}>
+        <Col sm={12} xs={18}>
           <div className='brand'>
             <EnvironmentTwoTone />
             <span>GeoTimeline</span>
           </div>
         </Col>
-        <Col span={12}>
-          <Menu mode={navLayout} style={{ textAlign: 'right' }}>
+        <Col sm={12} xs={6}>
+          <Menu
+            mode={navLayout}
+            style={{ textAlign: 'right' }}
+            overflowedIndicator={<MenuOutlined style={{margin: 0}}/>}
+          >
             <Menu.Item key='start'>
               <a href='#start'>Start here</a>
             </Menu.Item>
