@@ -9,7 +9,9 @@ const { Title, Paragraph } = Typography;
 
 const NewsSlider = (props) => {
   return (
-    <Carousel autoplay dots dotPosition="bottom">
+
+    <Carousel autoplay dots dotPosition='bottom'>
+
       {data &&
         data.map((item, i) => (
           <Card
