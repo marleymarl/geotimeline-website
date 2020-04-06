@@ -44,7 +44,7 @@ More to follow...
 ### Resources: 
 [Ant Design Docs - custom theme with Less ](https://ant.design/docs/react/use-with-create-react-app)
 
-## // End Geotimeline related
+## // End of Geotimeline Related Content
 
 ## create-react-app default README
 
