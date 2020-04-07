@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <Fragment>
       <Row justify="center" align="middle" id="start" className="hero-section">
-        <Col span={24} md={12}>
+        <Col span={24} md={18} lg={12}>
           <Result
             icon={<EnvironmentOutlined />}
             title="GeoTimeline - Map Data Input of Historical Footprints for Confirmed Cases of Coronavirus"
@@ -66,7 +66,7 @@ export default function HomePage() {
         style={{ padding: '80px 0', backgroundColor: '@primary-color' }}
         id="how"
       >
-        <Col span={20} md={16}>
+        <Col span={20} md={18} lg={16}>
           <Title level={2} style={{ textAlign: 'center' }}>
             How It Works
           </Title>
@@ -92,7 +92,7 @@ export default function HomePage() {
         }}
         id="who"
       >
-        <Col span={20} md={16}>
+        <Col span={20} md={18} lg={16}>
           <Title level={2} style={{ textAlign: 'center' }}>
             Who Is Making This
           </Title>
@@ -106,7 +106,7 @@ export default function HomePage() {
         </Col>
       </Row>
       <Row justify="center" style={{ padding: '80px 0' }} className="dark">
-        <Col span={24} md={12}>
+        <Col span={24} md={18} lg={12}>
           <NewsCarousel />
         </Col>
       </Row>
@@ -116,7 +116,7 @@ export default function HomePage() {
         style={{ padding: '80px 0' }}
         id="faq"
       >
-        <Col span={20} md={12}>
+        <Col span={20} md={18} lg={12}>
           <Faq />
         </Col>
       </Row>
