@@ -27,7 +27,7 @@ export default function HomePage() {
   return (
     <Fragment>
       <Row justify="center" align="middle" id="start" className="hero-section">
-        <Col span={18}>
+        <Col span={24} md={12}>
           <Result
             icon={<EnvironmentOutlined />}
             title="GeoTimeline - Map Data Input of Historical Footprints for Confirmed Cases of Coronavirus"
@@ -50,9 +50,13 @@ export default function HomePage() {
               </Button>,
             ]}
           />
-          <div className="scrollTo">
-            <DownCircleTwoTone />
-          </div>
+          {/*
+            * Not sure if this is good if the primary content is where it's taking users away from
+            *<div className="scrollTo">
+            <a href="#how" title="Scroll to content">
+              <DownCircleTwoTone />
+            </a>
+          </div>*/}
           <Divider />
         </Col>
       </Row>
@@ -62,7 +66,7 @@ export default function HomePage() {
         style={{ padding: '80px 0', backgroundColor: '@primary-color' }}
         id="how"
       >
-        <Col span={16}>
+        <Col span={20} md={16}>
           <Title level={2} style={{ textAlign: 'center' }}>
             How It Works
           </Title>
@@ -72,6 +76,7 @@ export default function HomePage() {
                 key={step.title}
                 title={step.title}
                 description={step.description}
+                status={'finish'}
               />
             ))}
           </Steps>
@@ -81,13 +86,13 @@ export default function HomePage() {
         justify="center"
         gutter={[24, 0]}
         style={{
-          padding: '60px 0',
+          padding: '60px 0 0',
           flexWrap: 'wrap',
           position: 'relative',
         }}
         id="who"
       >
-        <Col span={18}>
+        <Col span={20} md={16}>
           <Title level={2} style={{ textAlign: 'center' }}>
             Who Is Making This
           </Title>
@@ -101,7 +106,7 @@ export default function HomePage() {
         </Col>
       </Row>
       <Row justify="center" style={{ padding: '80px 0' }} className="dark">
-        <Col span={12}>
+        <Col span={24} md={12}>
           <NewsCarousel />
         </Col>
       </Row>
@@ -111,7 +116,7 @@ export default function HomePage() {
         style={{ padding: '80px 0' }}
         id="faq"
       >
-        <Col span={12}>
+        <Col span={20} md={12}>
           <Faq />
         </Col>
       </Row>

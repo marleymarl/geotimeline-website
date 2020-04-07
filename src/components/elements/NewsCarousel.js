@@ -9,9 +9,7 @@ const { Title, Paragraph } = Typography;
 
 const NewsSlider = (props) => {
   return (
-
-    <Carousel autoplay dots dotPosition='bottom'>
-
+    <Carousel autoplay dots dotPosition="bottom">
       {data &&
         data.map((item, i) => (
           <Card
@@ -22,13 +20,15 @@ const NewsSlider = (props) => {
               alignItems: 'center',
               justifyContent: 'center',
               textAlign: 'center',
-              height: '100%',
+              height: '400px',
               padding: '0 1rem',
               backgroundColor: '#ffffff',
             }}
           >
-            <div>
-              <Title level={3}>{item.title}</Title>
+            <div style={{ minHeight: '350px' }}>
+              <Title level={4} md={3}>
+                {item.title}
+              </Title>
               <Paragraph>{item.description}</Paragraph>
             </div>
           </Card>
