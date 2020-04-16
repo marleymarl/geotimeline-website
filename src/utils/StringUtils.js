@@ -64,8 +64,8 @@ export const CarouselData = [
 ];
 
 export const photoCollection = [
-  ['CC','Confirmed Case', 'CC1.png', 'CC2.png', 'CC3.png', 'CC4.png', 'CC5.png', 'CC6.png'],
-  ['HE','Health Expert', 'HE1.png', 'HE2.png', 'HE3.png', 'HE4.png', 'HE5.png', 'HE6.png'],
-  ['DS','Data Scientist', 'DS1.png', 'DS2.png', 'DS3.png', 'DS4.png', 'DS5.png', 'DS6.png'],
-  ['AO','Anyone', 'AO1.png', 'AO2.png', 'AO3.png', 'AO4.png', 'AO5.png', 'AO6.png']
+  ['CC','Confirmed Case', ['A1.png', 'A1.png']],
+  ['HE','Health Expert', ['A1.png', 'A1.png']],
+  ['DS','Data Scientist', ['A1.png', 'A1.png']],
+  ['AO','Anyone', ['A1.png', 'A1.png']]
 ]

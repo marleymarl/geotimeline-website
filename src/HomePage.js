@@ -30,7 +30,7 @@ const slidePhotos = photoCollection.map(
   item => <SlideShow
     key={item[0]}
     id={item[0]}
-    urls={item}
+    urls={item[2]}
     title={item[1]}
   />
 )
