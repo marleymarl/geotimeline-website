@@ -18,6 +18,7 @@ import { EnvironmentOutlined, DownCircleTwoTone } from '@ant-design/icons';
 import { Faq, NewsCarousel, VolunteerMap } from './components/elements';
 import { MainSteps } from './utils/StringUtils';
 import './HomePage.less';
+
 import SlideShow from '../src/components/elements/SlideShow.js'
 
 const { Title, Paragraph } = Typography;
@@ -34,6 +35,7 @@ const slidePhotos = photoCollection.map(
     title={item[1]}
   />
 )
+
 
 export default function HomePage() {
   const [current, setCurrent] = useState(0);
