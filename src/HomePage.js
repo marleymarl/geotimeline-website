@@ -15,7 +15,7 @@ import {
 import {photoCollection} from '../src/utils/StringUtils'
 import { EnvironmentOutlined, DownCircleTwoTone } from '@ant-design/icons';
 // imports
-import { Faq, NewsCarousel, VolunteerMap } from './components/elements';
+import { Faq, NewsCarousel} from './components/elements';
 import { MainSteps } from './utils/StringUtils';
 import './HomePage.less';
 
@@ -83,9 +83,9 @@ export default function HomePage() {
             How It Works
           </Title>
 
-          <Space style={{ textAlign: 'center' }}>
+          <div className="slider-container" id="slider-container">
             {slidePhotos}
-          </Space>
+          </div>
 
           {/* <Steps current={current} onChange={setCurrent}>
             {MainSteps.map((step) => (

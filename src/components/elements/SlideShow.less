@@ -1,9 +1,11 @@
 @import '../../assets/styles/theme.less';
 
+
+
 .slide-back {
     position: absolute;
     left: 15%;
-    bottom: -10%;
+    bottom: 10%;
     width: 20px;
     height: 20px;
     background-color: black;
@@ -15,7 +17,7 @@
 .slide-forward {
     position: absolute;
     right: 15%;
-    bottom: -10%;
+    bottom: 10%;
     width: 20px;
     height: 20px;
     background-color: black;
@@ -27,3 +29,26 @@
 .invisible {
     display: none;
 }
+
+.slide-card {
+    width: 400px;
+    margin: auto;
+    height: auto;
+
+    @media only screen and (min-width: 769px) and (max-width: 992px){
+        width: 250px
+      }
+}
+
+
+  .slide-img {
+    width: 300px;
+    height: auto;
+
+    @media only screen and (min-width: 769px) and (max-width: 992px) {
+        width: 180px;
+
+      }
+  }
+
+ 

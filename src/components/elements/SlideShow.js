@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import {} from '../../assets/imgs/'
 import { Card } from 'antd';
 import './SlideShow.less';
 
@@ -28,15 +27,17 @@ function SlideShow(props) {
 
     const slides = props.urls.map(item =>
         <div>
-            <img src={photoCollecton(`./${item}`)} style={{ 'width': '300px', 'height': '300px' }} />
+            <img src={photoCollecton(`./${item}`)} className="slide-img"/>
         </div>
     )
 
     return (
-        <Card title={props.title} style={{ 'width': '400px' }}>
+        <Card title={props.title}  className="slide-card">
             {slides[slide]}
+           
             <div id={"back" + props.title} className="slide-back" onClick={() => { if (slide > 0) { setSlide(slide - 1) } }}>&#10094;</div>
             <div id={"forward" + props.title} className="slide-forward" onClick={() => { if (slide < slides.length - 1) { setSlide(slide + 1) } }}>&#10095;</div>
+          
         </Card>
     )
 
