@@ -63,3 +63,9 @@ export const CarouselData = [
   },
 ];
 
+export const photoCollection = [
+  ['CC','For people who test positive', ['CC1.png', 'CC2.png', 'CC3.png', 'CC4.png', 'CC5.png', 'CC6.png']],
+  ['HE','For contact tracer', ['HE1.png', 'HE2.png', 'HE3.png', 'HE4.png', 'HE5.png', 'HE6.png', 'HE7.png']],
+  ['DS','For data scientist', ['DS1.png', 'DS2.png', 'DS3.png', 'DS4.png', 'DS5.png', 'DS6.png']],
+  ['A','For everyone else', ['A1.png', 'A2.png', 'A3.png', 'A4.png', 'A5.png', 'A6.png']]
+]

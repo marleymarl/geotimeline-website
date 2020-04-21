@@ -10,16 +10,32 @@ import {
   Card,
   Row,
   Col,
+  Space
 } from 'antd';
+import {photoCollection} from '../src/utils/StringUtils'
 import { EnvironmentOutlined, DownCircleTwoTone } from '@ant-design/icons';
 // imports
-import { Faq, NewsCarousel, VolunteerMap } from './components/elements';
+import { Faq, NewsCarousel} from './components/elements';
 import { MainSteps } from './utils/StringUtils';
 import './HomePage.less';
+
+import SlideShow from '../src/components/elements/SlideShow.js'
 
 const { Title, Paragraph } = Typography;
 const { Step } = Steps;
 const { Meta } = Card;
+
+
+
+const slidePhotos = photoCollection.map(
+  item => <SlideShow
+    key={item[0]}
+    id={item[0]}
+    urls={item[2]}
+    title={item[1]}
+  />
+)
+
 
 export default function HomePage() {
   const [current, setCurrent] = useState(0);
@@ -62,11 +78,16 @@ export default function HomePage() {
         style={{ padding: '80px 0', backgroundColor: '@primary-color' }}
         id="how"
       >
-        <Col span={16}>
-          <Title level={2} style={{ textAlign: 'center' }}>
+        <Col span={20} style={{ textAlign: 'center' }}>
+          <Title level={2}>
             How It Works
           </Title>
-          <Steps current={current} onChange={setCurrent}>
+
+          <div className="slider-container" id="slider-container">
+            {slidePhotos}
+          </div>
+
+          {/* <Steps current={current} onChange={setCurrent}>
             {MainSteps.map((step) => (
               <Step
                 key={step.title}
@@ -74,7 +95,7 @@ export default function HomePage() {
                 description={step.description}
               />
             ))}
-          </Steps>
+          </Steps> */}
         </Col>
       </Row>
       <Row
@@ -96,9 +117,7 @@ export default function HomePage() {
             code is open sourced on Github.
           </Paragraph>
         </Col>
-        <Col span={24}>
-          <VolunteerMap />
-        </Col>
+
       </Row>
       <Row justify="center" style={{ padding: '80px 0' }} className="dark">
         <Col span={12}>
