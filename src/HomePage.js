@@ -10,7 +10,11 @@ import {
   Card,
   Row,
   Col,
+
+  BackTop,
+
   Space
+
 } from 'antd';
 import {photoCollection} from '../src/utils/StringUtils'
 import { EnvironmentOutlined, DownCircleTwoTone } from '@ant-design/icons';
@@ -40,8 +44,11 @@ const slidePhotos = photoCollection.map(
 export default function HomePage() {
   const [current, setCurrent] = useState(0);
 
+  // const { Link } = Anchor
+
   return (
-    <Fragment>
+    <Fragment >
+      <BackTop />
       <Row justify="center" align="middle" id="start" className="hero-section">
         <Col span={18}>
           <Result
@@ -67,7 +74,9 @@ export default function HomePage() {
             ]}
           />
           <div className="scrollTo">
-            <DownCircleTwoTone />
+            <a href='#how'>
+              <DownCircleTwoTone />
+            </a>
           </div>
           <Divider />
         </Col>
@@ -75,8 +84,8 @@ export default function HomePage() {
       <Row
         justify="center"
         gutter={[24, 0]}
-        style={{ padding: '80px 0', backgroundColor: '@primary-color' }}
         id="how"
+        className="how-section"
       >
         <Col span={20} style={{ textAlign: 'center' }}>
           <Title level={2}>
@@ -101,12 +110,8 @@ export default function HomePage() {
       <Row
         justify="center"
         gutter={[24, 0]}
-        style={{
-          padding: '60px 0',
-          flexWrap: 'wrap',
-          position: 'relative',
-        }}
         id="who"
+        className="who-section"
       >
         <Col span={18}>
           <Title level={2} style={{ textAlign: 'center' }}>
@@ -119,7 +124,11 @@ export default function HomePage() {
         </Col>
 
       </Row>
-      <Row justify="center" style={{ padding: '80px 0' }} className="dark">
+      <Row 
+        justify="center" 
+        style={{ padding: '80px 0', margin: '0 auto 2rem' }} 
+        className="dark"
+      >
         <Col span={12}>
           <NewsCarousel />
         </Col>
@@ -127,8 +136,8 @@ export default function HomePage() {
       <Row
         justify="center"
         gutter={[24, 0]}
-        style={{ padding: '80px 0' }}
         id="faq"
+        className="faq-section"
       >
         <Col span={12}>
           <Faq />
