@@ -37,3 +37,35 @@ export const FAQs = [
       'The only permission so far, is the location access for your browser.We use it to take the user to his / her current location.Nothing happens after that, but you must explicitly give the application permission to access your location data.',
   },
 ];
+
+export const CarouselData = [
+  {
+    title:
+      '🎉🎉 GeoTimeline Wins Supply Chain / Medical Logistics Prize at EndCoronavirus Hackathon 🎉🎉',
+    description: 'March 22, 2020   ',
+  },
+  {
+    title: 'GeoTimeline Featured On HelpWithCovid March 24, 2020',
+    description: 'description to be entered here ',
+  },
+  {
+    title: 'GeoTimeline Team Grows from 3 to 45 in One Week',
+    description: 'description to be entered here ',
+  },
+  {
+    title:
+      'GeoTimeline Releases Anonymized Public Input and View App April 2, 2020',
+    description: 'description to be entered here ',
+  },
+  {
+    title: 'GeoTimeline Will Release Smart Proximity Alerts App April 9, 2020',
+    description: 'description to be entered here ',
+  },
+];
+
+export const photoCollection = [
+  ['CC','For people who test positive', ['CC1.png', 'CC2.png', 'CC3.png', 'CC4.png', 'CC5.png', 'CC6.png']],
+  ['HE','For contact tracer', ['HE1.png', 'HE2.png', 'HE3.png', 'HE4.png', 'HE5.png', 'HE6.png', 'HE7.png']],
+  ['DS','For data scientist', ['DS1.png', 'DS2.png', 'DS3.png', 'DS4.png', 'DS5.png', 'DS6.png']],
+  ['A','For everyone else', ['A1.png', 'A2.png', 'A3.png', 'A4.png', 'A5.png', 'A6.png']]
+]
